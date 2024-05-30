@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Message } from './Message';
 
 export const SimpleForm = () => {
 
@@ -41,7 +42,7 @@ export const SimpleForm = () => {
 
     // when an empty array is passed, it signifies that the useEffect should only trigger once
     useEffect(() => {
-      console.log('useEffect called');
+    //   console.log('useEffect called');
     }, []);
 
     // If I need to trigger the useEffect or a function every time the form changes
@@ -50,11 +51,11 @@ export const SimpleForm = () => {
     // so instead of having multiples effects inside the useEffect, it is recommended 
     // to create separate, specialized effects for each required action.
     useEffect(() => {
-      console.log('formState change');
+    //   console.log('formState change');
     }, [formState]);
 
     useEffect(() => {
-      console.log('email change');
+    //   console.log('email change');
     }, [email])
 
 
@@ -79,6 +80,10 @@ export const SimpleForm = () => {
                 value={email}
                 onChange={onInputChange}
             />
+
+            {
+                (username === 'strider2') && <Message />
+            }
         </>
     )
 }
